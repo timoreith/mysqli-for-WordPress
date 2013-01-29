@@ -1,5 +1,4 @@
 PHP mysqli for WordPress
-========================
 
 This is just a first try to run WordPress with PHP's mysqli extension. There are some ToDo's and it is not recommended for productive use!
 
