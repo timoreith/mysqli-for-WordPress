@@ -128,8 +128,7 @@ class wpdbi extends wpdb
         $this->last_query  = null;
 
         if ( is_resource( $this->result ) ) {
-            // ToDo: not supported with mysqli
-            mysql_free_result( $this->result );
+            mysqli_free_result( $this->result );
         }
     }
 
@@ -234,8 +233,7 @@ class wpdbi extends wpdb
     protected function load_col_info() {
         if ( $this->col_info )
             return;
-// ToDo: mysql_num_fields not supported with mysqli
-        for ( $i = 0; $i < @mysql_num_fields( $this->result ); $i++ ) {
+        for ( $i = 0; $i < @mysqli_num_fields( $this->result ); $i++ ) {
             $this->col_info[ $i ] = @mysqli_fetch_field( $this->result, $i );
         }
     }
